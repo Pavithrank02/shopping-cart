@@ -8,11 +8,9 @@ import Footer from "../Footer/Footer";
 const Main = () => {
   return (
     <div>
-      <Navbar></Navbar>
-      <Slider></Slider>
-      <NavigateButtons></NavigateButtons>
-      <ProductSection></ProductSection>
-      <Footer></Footer>
+      <Slider />
+      <NavigateButtons />
+      <ProductSection />
     </div>
   );
 };

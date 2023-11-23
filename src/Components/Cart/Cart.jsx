@@ -36,7 +36,7 @@ const Cart = ({ openModal, setOpen }) => {
               {cart.map((item, index) => {
                 return (
                   <div key={index}>
-                    <div className="grid grid-cols-2 py-4">
+                    <div className="grid grid-cols-2 gap-5 py-4 items-start ">
                       <div>
                         <img
                           className="h-[125px] rounded-md"
@@ -49,12 +49,12 @@ const Cart = ({ openModal, setOpen }) => {
                           </h4>
                         </div>
                         <div className="max-w-xs">
-                          <p className="text-black text-xs font-inter tracking-normal leading-none pt-2">
+                          <p className="text-black text-xs font-inter tracking-normal leading-none pt-2 text-justify">
                             {item.text}
                           </p>
                         </div>
                       </div>
-                      <div>
+                      <div className="flex flex-col item-start ml-12 ">
                         <p className="text-black text-sm font-inter tracking-normal leading-none pt-2">
                           Selected size:{" "}
                           <span className="ml-2">{item.size}</span>

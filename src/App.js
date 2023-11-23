@@ -6,6 +6,8 @@ import FilteredProducts from "./Components/FiltredProducts/FilteredProducts";
 import SingleProduct from "./Components/FiltredProducts/SingleProduct";
 import Login from "./Components/Login/Login";
 import { useSelector } from "react-redux";
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const user = useSelector((state) => state.user.user);
@@ -14,12 +16,12 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route
             path="/"
             element={<Main />}
           ></Route>
-
           <Route
             path="/filteredProducts/:type"
             element={<FilteredProducts />}
@@ -29,6 +31,7 @@ function App() {
             element={<SingleProduct />}
           ></Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

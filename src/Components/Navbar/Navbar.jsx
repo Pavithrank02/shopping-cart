@@ -5,12 +5,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/slices/authSlice";
 import { Avatar } from "@material-tailwind/react";
 import { Tooltip } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const user = useSelector((state) => state.user.user);
   const { name, image } = user;
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate()
   const handleOpen = () => {
     setOpen(true);
   };
@@ -18,16 +20,16 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="bg-black p-4 w-full flex justify-center items-center ">
+      {/* <div className="bg-black p-4 w-full flex justify-center items-center ">
         <p className="text-white font-inter text-2xl font-bold  ">
           Redux Toolkit Time
         </p>
-      </div>
-      <div className="flex justify-around items-center">
+      </div> */}
+      <div className="h-14 flex justify-between items-center ">
         <div>
-          <img className="h-28 w-full" src={logo} alt="store"></img>
+          <img className="h-14 w-18 cursor-pointer" src={logo} alt="store" onClick={() => navigate('/')}></img>
         </div>
-        <div className="flex flex-row w-1/4 justify-between">
+        <div className="flex flex-row w-1/3 justify-around">
           <div className="flex flex-row items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
