@@ -17,36 +17,33 @@ const EShoppingFAQ = () => {
       answer:
         'After your order is shipped, you will receive a tracking number via email. You can use this tracking number to monitor the status and location of your package.'
     },
-    {
-      question: 'How do I track my order?',
-      answer:
-        'After your order is shipped, you will receive a tracking number via email. You can use this tracking number to monitor the status and location of your package.'
-    },
     // Add more e-shopping related FAQs as needed
   ];
 
   return (
     <div className="max-w-4xl mx-auto mt-8">
       <h1 className="text-4xl font-semibold mb-8 text-center">Frequently Asked Questions</h1>
-      <div className="grid grid-cols-1 gap-6">
+      <div className="accordion">
         {faqs.map((faq, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-            <button
-              className="w-full py-4 px-6 text-left focus:outline-none"
-              onClick={() => {
-                const element = document.getElementById(`faq-answer-${index}`);
-                if (element) {
-                  element.classList.toggle('hidden');
-                }
-              }}
-            >
-              <h2 className="text-lg font-semibold">{faq.question}</h2>
-            </button>
-            <div
-              id={`faq-answer-${index}`}
-              className="hidden p-6 border-t border-gray-200"
-            >
-              <p className="text-gray-700">{faq.answer}</p>
+          <div key={index} className="faq-item">
+            <input type="checkbox" id={`faq-toggle-${index}`} className="hidden" />
+            <label htmlFor={`faq-toggle-${index}`} className="faq-question cursor-pointer flex items-center justify-between py-3 px-5 border-b border-gray-300">
+              <span className="text-lg font-semibold">{faq.question}</span>
+              <svg
+                className="w-4 h-4 transition-transform transform"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </label>
+            <div className="faq-answer overflow-hidden border-l-2 border-gray-300">
+              <div className="p-5">{faq.answer}</div>
             </div>
           </div>
         ))}
