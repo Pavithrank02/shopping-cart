@@ -37,7 +37,7 @@ const SingleProduct = () => {
                   <p className="text-orange-700 text-xl font-inter font-bold tracking-normal leading-none pb-4">
                     15% OFF
                   </p>
-                  <p className="text-gray-600 text-xl font-inter font-bold tracking-normal leading-none pb-4">
+                  <p className="text-gray-600 text-xl text-justify font-inter font-bold tracking-normal leading-none pb-4">
                     {item.text}
                   </p>
                   <div className="pb-4">
