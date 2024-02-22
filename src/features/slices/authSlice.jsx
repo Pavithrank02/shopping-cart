@@ -22,6 +22,7 @@ export const authSlice = createSlice({
       if (!userValidation || !passwordValidation) {
         state.user.authUser = false;
         console.log("in")
+
       } else {
         state.user.authUser = true;
         const saveState = JSON.stringify(userId);

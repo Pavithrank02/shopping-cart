@@ -19,13 +19,13 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   return (
-    <>
+    <div className="fixed z-20 w-full">
       {/* <div className="bg-black p-4 w-full flex justify-center items-center ">
         <p className="text-white font-inter text-2xl font-bold  ">
           Redux Toolkit Time
         </p>
       </div> */}
-      <div className="h-14 flex justify-between items-center ">
+      <div className=" h-14 flex justify-between items-center bg-white ">
         <div>
           <img className="h-14 w-18 cursor-pointer" src={logo} alt="store" onClick={() => navigate('/')}></img>
         </div>
@@ -109,7 +109,7 @@ const Navbar = () => {
           Diffrent payment methods
         </p>
       </div>
-    </>
+    </div>
   );
 };
 
