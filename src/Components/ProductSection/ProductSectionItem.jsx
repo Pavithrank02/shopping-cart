@@ -9,7 +9,7 @@ import {
 } from "@material-tailwind/react";
 import { Button } from "@material-tailwind/react";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../features/slices/cartSlice";
+import { addToCart, removeFromCart } from "../../features/slices/cartSlice";
 
 const ProductSectionItem = ({
   id,
@@ -20,6 +20,7 @@ const ProductSectionItem = ({
   price,
   color,
   totalPrice,
+  cartEmpty
 }) => {
   const dispatch = useDispatch();
 
@@ -76,6 +77,8 @@ const ProductSectionItem = ({
                     name: name,
                     size: defaultSize,
                     color: defaultColor,
+                    cartEmpty: false
+
                   })
                 )
               }
@@ -87,6 +90,20 @@ const ProductSectionItem = ({
               Add to Cart
             </Button>
           </Tooltip>
+          {/* <Tooltip
+            content="Remove from the Cart"
+            placement="bottom"
+          >
+            <Button
+              onClick={() => dispatch(removeFromCart(id))}
+              size="sm"
+              color="red"
+              ripple={true}
+              variant="filled"
+            >
+              Remove
+            </Button>
+          </Tooltip> */}
         </CardFooter>
       </Card>
     </div>

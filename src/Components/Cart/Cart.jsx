@@ -55,25 +55,25 @@ const Cart = ({ openModal, setOpen }) => {
                         </div>
                       </div>
                       <div className="flex flex-col item-start ml-12 ">
-                        <p className="text-black text-sm font-inter tracking-normal leading-none pt-2">
+                        <p className="text-black text-sm font-inter tracking-normal leading-none pt-2 font-bold">
                           Selected size:{" "}
                           <span className="ml-2">{item.size}</span>
                         </p>
-                        <p className="text-black text-sm font-inter tracking-normal leading-none pt-2">
+                        <p className="text-black text-sm font-inter tracking-normal leading-none pt-2 font-bold">
                           Selected color:{" "}
                           <span
                             className="ml-2 rounded-full px-2"
                             style={{ backgroundColor: item.color }}
                           ></span>
                         </p>
-                        <p className="text-black text-sm font-inter tracking-normal leading-none pt-2">
+                        <p className="text-black text-sm font-inter tracking-normal leading-none pt-2 font-bold">
                           Amount: <span className="ml-2">{item.amount}</span>
                         </p>
-                        <p className="text-black text-sm font-inter tracking-normal leading-none pt-2">
+                        <p className="text-black text-sm font-inter tracking-normal leading-none pt-2 font-bold">
                           Single Item Price:{" "}
                           <span className="ml-2">{item.price}$</span>
                         </p>
-                        <p className="text-black text-sm font-inter tracking-normal leading-none pt-2">
+                        <p className="text-black text-sm font-inter tracking-normal leading-none pt-2 font-bold">
                           Total Item Prices:{" "}
                           <span className="ml-2">{item.totalPrice}$</span>
                         </p>

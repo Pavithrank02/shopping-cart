@@ -7,6 +7,7 @@ export const cartSlice = createSlice({
     amount: 0,
     totalAmount: 0,
     totalPrice: 0,
+    cartEmpty: true
   },
   reducers: {
     addToCart(state, action) {
