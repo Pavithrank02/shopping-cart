@@ -18,10 +18,14 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route
+          {authUser ? <Route
             path="/"
             element={<Main />}
-          ></Route>
+          ></Route> : <Route
+            path="/"
+            element={<Login />}
+          ></Route>}
+
           <Route
             path="/filteredProducts/:type"
             element={<FilteredProducts />}

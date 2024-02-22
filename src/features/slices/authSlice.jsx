@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const authSlice = createSlice({
   name: "auth",
   initialState: {
-    user: JSON.parse(sessionStorage.getItem("authUser")) || {
+    user: JSON.parse(localStorage.getItem("authUser")) || {
       name: "",
       password: "",
       image: "",
@@ -13,18 +13,20 @@ export const authSlice = createSlice({
   reducers: {
     login(state, action) {
       const userId = action.payload;
-      const userValidation = /^[A-Za-z]{4,10}$/i.test(userId.name);
+      const userValidation = /^[a-zA-Z]+(?:\s[a-zA-Z]+)?$/i.test(userId.name);
       const passwordValidation =
-        /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,10}$/i.test(
+        /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/i.test(
           userId.password
         );
       state.user = userId;
       if (!userValidation || !passwordValidation) {
         state.user.authUser = false;
+        console.log("in")
       } else {
         state.user.authUser = true;
         const saveState = JSON.stringify(userId);
-        sessionStorage.setItem("authUser", saveState);
+        localStorage.setItem("authUser", saveState);
+        console.log("out")
       }
     },
     logout(state) {
@@ -34,7 +36,6 @@ export const authSlice = createSlice({
         image: "",
         authUser: false,
       };
-      sessionStorage.clear();
     },
   },
 });
