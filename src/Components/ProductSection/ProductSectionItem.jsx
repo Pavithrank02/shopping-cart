@@ -63,7 +63,7 @@ const ProductSectionItem = ({
           </div>
         </CardBody>
         <CardFooter className="flex justify-center gap-7 pt-2">
-          <Tooltip content="Add to Cart" placement="bottom">
+          {cartEmpty ? <Tooltip content="Add to Cart" placement="bottom">
             <Button
               onClick={() =>
                 dispatch(
@@ -89,13 +89,12 @@ const ProductSectionItem = ({
             >
               Add to Cart
             </Button>
-          </Tooltip>
-          {/* <Tooltip
+          </Tooltip> : <Tooltip
             content="Remove from the Cart"
             placement="bottom"
           >
             <Button
-              onClick={() => dispatch(removeFromCart(id))}
+              onClick={() => dispatch(removeFromCart(id, cartEmpty = true))}
               size="sm"
               color="red"
               ripple={true}
@@ -103,7 +102,10 @@ const ProductSectionItem = ({
             >
               Remove
             </Button>
-          </Tooltip> */}
+          </Tooltip>
+          }
+
+
         </CardFooter>
       </Card>
     </div>
