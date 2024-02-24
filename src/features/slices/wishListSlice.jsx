@@ -1,19 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const cartSlice = createSlice({
-  name: "cart",
+export const wishListSlice = createSlice({
+  name: "wishList",
   initialState: {
-    cart: [],
+    wishList: [],
     amount: 0,
     totalAmount: 0,
-    totalPrice: 0,
-    cartEmpty: true
   },
   reducers: {
-    addToCart(state, action) {
+    addToWishlist(state, action) {
       const productId = action.payload;
       try {
-        const exist = state.cart.find(
+        const exist = state.wishList.find(
           (product) =>
             product.id === productId.id &&
             product.size === productId.size &&
@@ -21,53 +19,43 @@ export const cartSlice = createSlice({
         );
         if (exist) {
           exist.amount++;
-          exist.totalPrice += productId.price;
           state.totalAmount++;
-          state.totalPrice += productId.price;
         } else {
-          state.cart.push({
+          state.wishList.push({
             id: productId.id,
-            price: productId.price,
             size: productId.size,
             amount: 1,
             img: productId.img,
-            totalPrice: productId.price,
             name: productId.name,
             text: productId.text,
             color: productId.color,
           });
           state.totalAmount++;
-          state.totalPrice += productId.price;
         }
       } catch (err) {
         return err;
       }
     },
-    removeFromCart(state, action) {
+    removeFromWishlist(state, action) {
       const productId = action.payload;
       try {
-        const exist = state.cart.find(
+        const exist = state.wishList.find(
           (product) =>
             product.id === productId.id &&
             product.size === productId.size &&
             product.color === productId.color
         );
         if (exist.amount === 1) {
-          state.cart = state.cart.filter(
+          state.wishList = state.wishList.filter(
             (product) =>
               product.id !== productId.id ||
               product.size !== productId.size ||
               product.color !== productId.color
           );
           state.totalAmount--;
-          state.totalPrice -= productId.price;
-          // state.cartEmpty = true
         } else {
           exist.amount--;
-          exist.totalPrice -= productId.price;
           state.totalAmount--;
-          state.totalPrice -= productId.price;
-          // state.cartEmpty = true
         }
       } catch (err) {
         return err;
@@ -76,5 +64,5 @@ export const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
-export default cartSlice.reducer;
+export const { addToWishlist, removeFromWishlist } = wishListSlice.actions;
+export default wishListSlice.reducer;
