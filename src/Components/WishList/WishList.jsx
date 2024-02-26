@@ -89,7 +89,7 @@ const WishList = ({ openModal, setOpen }) => {
               unmount: { scale: 0.9, y: -100 },
             }}
           >
-            <DialogHeader>Shopping Bag</DialogHeader>
+            <DialogHeader>Shopping Kit</DialogHeader>
             <DialogBody divider>
               <div>
                 <h1 className="text-black text-3xl font-inter font-bold tracking-normal leading-none py-4">
