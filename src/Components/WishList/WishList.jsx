@@ -12,6 +12,7 @@ import { removeFromWishlist } from "../../features/slices/wishListSlice";
 
 const WishList = ({ openModal, setOpen }) => {
   const wishList = useSelector((state) => state.wishList.wishList);
+  console.log(wishList)
 
   const dispatch = useDispatch();
   return (
@@ -89,11 +90,11 @@ const WishList = ({ openModal, setOpen }) => {
               unmount: { scale: 0.9, y: -100 },
             }}
           >
-            <DialogHeader>Shopping Kit</DialogHeader>
+            <DialogHeader>Wish Kit</DialogHeader>
             <DialogBody divider>
               <div>
                 <h1 className="text-black text-3xl font-inter font-bold tracking-normal leading-none py-4">
-                  Your bag is empty
+                  Your list is empty
                 </h1>
                 <p className="text-black text-base font-inter tracking-normal leading-none ">
                   Add some products
