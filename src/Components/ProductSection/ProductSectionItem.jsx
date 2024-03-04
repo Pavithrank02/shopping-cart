@@ -27,7 +27,6 @@ const ProductSectionItem = ({
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
   const wishList = useSelector((state) => state.wishList.wishList);
-  // console.log(cart,)
 
   const defaultSize = size[0];
   const defaultColor = color[0];
@@ -99,8 +98,6 @@ const ProductSectionItem = ({
           <Tooltip content="Wishlist" placement="bottom">
             <Button
               onClick={() => (
-
-                console.log("in"),
                 dispatch(
                   addToWishlist({
                     id: id,
