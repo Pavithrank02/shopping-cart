@@ -60,7 +60,7 @@ const Login = () => {
             onChange={onChange}
           />
           <Typography variant="small" className=" flex justify-center">
-            Example:0987Pa!
+            Example:09876Pa!
           </Typography>
           <Input
             label="Image URL address"
