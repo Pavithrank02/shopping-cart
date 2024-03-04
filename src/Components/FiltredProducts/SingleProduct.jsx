@@ -140,11 +140,8 @@ const SingleProduct = () => {
                         )
                       }
                     >
-<<<<<<< HEAD
                       {cart.length > 0 && cart.filter((item) => item.id === id).length > 0 ? "Added to Cart" : "Add to Cart"}
-=======
-                    {cart.length > 0 && cart.filter((item) => item.id === id).length > 0 ? "Added to Cart" : "Add to Cart"}
->>>>>>> fddf568d10b0cae2c9e52590f20df4f29b55c36b
+
                     </Button>
                   </Tooltip>
                 </div>
