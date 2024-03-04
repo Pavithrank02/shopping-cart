@@ -11,6 +11,7 @@ const SingleProduct = () => {
   const productColor = product[0].color[0];
   const [size, setSize] = useState(productSize);
   const [color, setColor] = useState(productColor);
+  const cart = useSelector((state) => state.cart.cart);
 
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -138,7 +139,7 @@ const SingleProduct = () => {
                         )
                       }
                     >
-                      Add to Cart
+                      {cart.length > 0 && cart.filter((item) => item.id === id).length > 0 ? "Added to Cart" : "Add to Cart"}
                     </Button>
                   </Tooltip>
                 </div>

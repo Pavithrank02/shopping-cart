@@ -19,15 +19,15 @@ export const authSlice = createSlice({
           userId.password
         );
       state.user = userId;
+
       if (!userValidation || !passwordValidation) {
+        alert("Enter Name with atleast 1 capital letter and password with minimum 8 characters with One capital letter, one small letter and one speacial character'")
         state.user.authUser = false;
-        console.log("in")
 
       } else {
         state.user.authUser = true;
         const saveState = JSON.stringify(userId);
         localStorage.setItem("authUser", saveState);
-        console.log("out")
       }
     },
     logout(state) {

@@ -33,12 +33,13 @@ const Login = () => {
           color="blue"
           className="mb-4 grid h-28 place-items-center"
         >
-          <Typography variant="h3" color="white">
+          <Typography variant="h3" className="text-xs ">
             Sign In
           </Typography>
         </CardHeader>
         <CardBody className="flex flex-col gap-4">
           <Input
+            required
             label="Name"
             size="lg"
             type="text"
@@ -47,6 +48,7 @@ const Login = () => {
             onChange={onChange}
           />
           <Input
+            required
             label="Password"
             size="lg"
             type="password"
@@ -54,6 +56,7 @@ const Login = () => {
             value={values.password}
             onChange={onChange}
           />
+
           <Input
             label="Image URL address"
             size="lg"
@@ -72,6 +75,13 @@ const Login = () => {
           >
             Sign In
           </Button>
+          {/* <Button
+            variant="gradient"
+            fullWidth
+            onClick={() => dispatch(dispatch(values.name === "Guest User", values.password === "09876Pa!"))}
+          >
+            Guest SignIn
+          </Button> */}
           <Typography variant="small" className="mt-6 flex justify-center">
             Image is Optional
           </Typography>
