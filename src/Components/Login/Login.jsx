@@ -31,7 +31,7 @@ const Login = () => {
         <CardHeader
           variant="gradient"
           color="blue"
-          className="mb-4 grid h-28 place-items-center"
+          className="grid h-20 place-items-center"
         >
           <Typography variant="h3" className="text-xs ">
             Sign In
@@ -47,6 +47,9 @@ const Login = () => {
             value={values.name}
             onChange={onChange}
           />
+          <Typography variant="small" className="flex justify-center">
+            Example: John
+          </Typography>
           <Input
             required
             label="Password"
@@ -56,7 +59,9 @@ const Login = () => {
             value={values.password}
             onChange={onChange}
           />
-
+          <Typography variant="small" className=" flex justify-center">
+            Example:0987Pa!
+          </Typography>
           <Input
             label="Image URL address"
             size="lg"
