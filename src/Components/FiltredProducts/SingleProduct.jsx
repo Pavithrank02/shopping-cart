@@ -12,7 +12,6 @@ const SingleProduct = () => {
   const productColor = product[0].color[0];
   const [size, setSize] = useState(productSize);
   const [color, setColor] = useState(productColor);
-  const cart = useSelector((state) => state.cart.cart);
 
   const { id } = useParams();
   const dispatch = useDispatch();
