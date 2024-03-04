@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 const SingleProduct = () => {
   const product = useSelector((state) => state.products.singleProduct);
   const productSize = product[0].size ? product[0].size[0] : "";
+  const cart = useSelector((state) => state.cart.cart);
   const productColor = product[0].color[0];
   const [size, setSize] = useState(productSize);
   const [color, setColor] = useState(productColor);
@@ -139,7 +140,11 @@ const SingleProduct = () => {
                         )
                       }
                     >
+<<<<<<< HEAD
                       {cart.length > 0 && cart.filter((item) => item.id === id).length > 0 ? "Added to Cart" : "Add to Cart"}
+=======
+                    {cart.length > 0 && cart.filter((item) => item.id === id).length > 0 ? "Added to Cart" : "Add to Cart"}
+>>>>>>> fddf568d10b0cae2c9e52590f20df4f29b55c36b
                     </Button>
                   </Tooltip>
                 </div>
