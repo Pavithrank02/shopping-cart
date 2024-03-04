@@ -26,6 +26,7 @@ const ProductSectionItem = ({
 }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
+  // console.log(cart,)
 
   const defaultSize = size[0];
   const defaultColor = color[0];
@@ -91,7 +92,7 @@ const ProductSectionItem = ({
               ripple={true}
             >
 
-              Add to Cart
+              {cart.length > 0 && cart.filter((item) => item.id === id).length > 0 ? "Added to Cart" : "Add to Cart"}
             </Button>
           </Tooltip>
           <Tooltip content="Wishlist" placement="bottom">

@@ -13,7 +13,7 @@ const ProductSection = () => {
       <div className="grid grid-cols-3 justify-items-center py-8 gap-4 mx-auto max-w-7xl">
         {storeData.slice(0, 6).map((product, index) => {
           return (
-            <div key={index}>
+            <div key={index} >
               <ProductSectionItem
                 id={product.id}
                 name={product.name}
