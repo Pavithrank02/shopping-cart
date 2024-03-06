@@ -11,7 +11,6 @@ import { removeFromWishlist } from "../../features/slices/wishListSlice";
 
 const WishList = ({ openModal, setOpen }) => {
   const wishList = useSelector((state) => state.wishList.wishList);
-  console.log(wishList)
 
   const dispatch = useDispatch();
   return (
