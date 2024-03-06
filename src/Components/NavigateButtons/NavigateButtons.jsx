@@ -1,9 +1,9 @@
 import React from "react";
-import { Button } from "@material-tailwind/react";
-import clothes from "../../assets/images/clothes.jpg";
-import { filterProducts } from "../../features/slices/productsSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { Button } from "@material-tailwind/react";
+import { filterProducts } from "../../features/slices/productsSlice";
+import clothes from "../../assets/images/clothes.jpg";
 
 const NavigateButtons = () => {
   const buttons = [

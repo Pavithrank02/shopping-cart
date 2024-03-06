@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Card,
   CardHeader,
@@ -7,10 +8,8 @@ import {
   Typography,
   Tooltip,
 } from "@material-tailwind/react";
-import { IconButton } from "@material-tailwind/react";
 import { Button } from "@material-tailwind/react";
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart } from "../../features/slices/cartSlice";
+import { addToCart } from "../../features/slices/cartSlice";
 import { addToWishlist } from "../../features/slices/wishListSlice";
 
 const ProductSectionItem = ({
@@ -22,7 +21,6 @@ const ProductSectionItem = ({
   price,
   color,
   totalPrice,
-  cartEmpty
 }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);

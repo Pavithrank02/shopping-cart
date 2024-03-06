@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Tooltip, Button } from "@material-tailwind/react";
 import { addToCart } from "../../features/slices/cartSlice";
-import { useDispatch } from "react-redux";
 
 const SingleProduct = () => {
   const product = useSelector((state) => state.products.singleProduct);

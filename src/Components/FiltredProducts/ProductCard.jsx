@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { Link, useParams } from "react-router-dom";
 import {
   Card,
   CardHeader,
@@ -6,9 +8,7 @@ import {
   CardFooter,
   Typography,
 } from "@material-tailwind/react";
-import { useDispatch } from "react-redux";
 import { singleProduct } from "../../features/slices/productsSlice";
-import { Link, useParams } from "react-router-dom";
 
 const ProductCard = ({ id, name, text, img, price, colors }) => {
   const dispatch = useDispatch();

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import logo from "../../assets/images/logo.png";
-import Cart from "../Cart/Cart";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../../features/slices/authSlice";
+import { useNavigate } from "react-router-dom";
 import { Avatar } from "@material-tailwind/react";
 import { Tooltip } from "@material-tailwind/react";
-import { useNavigate } from "react-router-dom";
+import { logout } from "../../features/slices/authSlice";
 import WishList from "../WishList/WishList";
+import Cart from "../Cart/Cart";
+import logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
   const totalAmount = useSelector((state) => state.cart.totalAmount);

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import {
   Card,
   CardHeader,
@@ -9,7 +10,6 @@ import {
 import { Button } from "@material-tailwind/react";
 import { Input } from "@material-tailwind/react";
 import { login } from "../../features/slices/authSlice";
-import { useDispatch } from "react-redux";
 
 const Login = () => {
   const intitalState = {

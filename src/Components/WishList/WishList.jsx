@@ -1,10 +1,9 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import {
   Button,
   Dialog,
   DialogHeader,
   DialogBody,
-  DialogFooter,
 } from "@material-tailwind/react";
 import { Tooltip } from "@material-tailwind/react";
 import { useSelector, useDispatch } from "react-redux";
