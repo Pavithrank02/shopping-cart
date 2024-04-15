@@ -80,13 +80,7 @@ const Login = () => {
           >
             Sign In
           </Button>
-          {/* <Button
-            variant="gradient"
-            fullWidth
-            onClick={() => dispatch(dispatch(values.name === "Guest User", values.password === "09876Pa!"))}
-          >
-            Guest SignIn
-          </Button> */}
+
           <Typography variant="small" className="mt-6 flex justify-center">
             Image is Optional
           </Typography>
